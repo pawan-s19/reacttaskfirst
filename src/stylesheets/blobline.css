@@ -1,0 +1,15 @@
+.blob-line {
+  width: fit-content;
+}
+.blob {
+  height: 10vmax;
+  width: 10vmax;
+  border-radius: 50%;
+  background-color: rgb(238, 237, 237);
+  border: 8px solid rgb(246, 246, 246);
+}
+.line {
+  height: 15vmax;
+  width: 0.3vmax;
+  background-color: rgb(238, 237, 237);
+}

@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from "react";
+import Assignment from "./components/Assignment";
+import BlobLine from "./components/BlobLine";
+import Circle from "./components/Circle";
+import Heading from "./components/Heading";
+import SideHeading from "./components/SideHeading";
+import Timeline from "./components/Timeline";
+import "./stylesheets/app.css";
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    {/* // <div className="parent d-flex"> */}
+    //   {/* <div>
+    //     <SideHeading />
+    //     <Timeline />
+    //   </div>
+    //   <div>
+    //     <Heading />
+    //     <Circle />
+    //     <BlobLine />
+    //   </div> */}
+    {/* //   <div className="left d-flex ">
+    //     <SideHeading />
+    //     <Timeline />
+    //   </div>
+    //   <div className="right"></div>
+    // </div> */}
+    <Assignment/>
+    </>
+
   );
-}
+};
 
 export default App;
