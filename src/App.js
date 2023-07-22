@@ -17,7 +17,7 @@ const App = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     setList([...list, { ...task, id: uuidv4() }]);
-    setTask({ ...task, name: "" });
+    setTask({ ...task, name: "", address: "" });
   };
 
   const deleteHandler = (id) => {
@@ -61,7 +61,7 @@ const App = () => {
                 key={i}
                 className="list-group-item d-flex justify-content-between"
               >
-                {elem.name}{" "}
+                {elem.name} <span>{elem.address}</span>
                 <span
                   onClick={() => {
                     deleteHandler(elem.id);
