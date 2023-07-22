@@ -6,7 +6,6 @@ const Gallery = () => {
 
   const apiCall = async () => {
     let { data } = await axios.get("https://picsum.photos/v2/list");
-    console.log(data);
     setImageData(data);
   };
 
@@ -20,20 +19,26 @@ const Gallery = () => {
       <h1 className="text-center bg-secondary text-light p-3">Gallery App</h1>
 
       <div className="d-flex flex-wrap">
-        {imageData.map((e) => {
-          return (
-            <div className="card m-3" style={{ width: "18rem" }}>
-              <img
-                className="card-img-top"
-                src={e.download_url}
-                alt="Card image cap"
-              />
-              <div className="card-body">
-                <h5 className="card-title">{e.author}</h5>
+        {imageData.length > 0 ? (
+          imageData.map((e) => {
+            return (
+              <div key={e.id} className="card m-3" style={{ width: "18rem" }}>
+                <img
+                  className="card-img-top"
+                  src={e.download_url}
+                  alt="Card image cap"
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{e.author}</h5>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })
+        ) : (
+          <div className="spinner-border" role="status">
+            <span className="sr-only"></span>
+          </div>
+        )}
       </div>
     </div>
   );
