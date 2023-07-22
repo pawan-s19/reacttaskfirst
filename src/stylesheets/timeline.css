@@ -1,9 +1,0 @@
-.wrapper-head {
-  border-bottom: 3px solid rgb(173, 170, 170);
-}
-.wrapper {
-  flex-shrink: 0;
-  width: 246px;
-  background-color: gray;
-  height: fit-content;
-}
