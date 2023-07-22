@@ -4,13 +4,14 @@ import { v4 as uuidv4 } from "uuid";
 const App = () => {
   const [task, setTask] = useState({
     name: "",
+    address: "",
     id: "",
   });
 
   const [list, setList] = useState([]);
 
   const changeHandler = (e) => {
-    setTask({ ...task, name: e.target.value });
+    setTask({ ...task, [e.target.name]: e.target.value });
   };
 
   const submitHandler = (e) => {
@@ -22,6 +23,7 @@ const App = () => {
   const deleteHandler = (id) => {
     setList(list.filter((e) => e.id !== id));
   };
+
   return (
     <>
       <h1 className="text-center bg-primary text-white p-3 mt-5">To do list</h1>
@@ -35,6 +37,15 @@ const App = () => {
           placeholder="Write the task"
           onChange={changeHandler}
           value={task.name}
+          name="name"
+        ></input>
+        <input
+          className="form-control w-50"
+          type="text"
+          placeholder="Write the task"
+          onChange={changeHandler}
+          value={task.address}
+          name="address"
         ></input>
         <input
           className="form-control btn btn-primary w-25 ms-4"
