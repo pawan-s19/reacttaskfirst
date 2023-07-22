@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 const Gallery = () => {
   const [imageData, setImageData] = useState([]);
@@ -22,16 +23,24 @@ const Gallery = () => {
         {imageData.length > 0 ? (
           imageData.map((e) => {
             return (
-              <div key={e.id} className="card m-3" style={{ width: "18rem" }}>
-                <img
-                  className="card-img-top"
-                  src={e.download_url}
-                  alt="Card image cap"
-                />
-                <div className="card-body">
-                  <h5 className="card-title">{e.author}</h5>
+              <Link key={e.id} to={`/${e.id}`}>
+                <div
+                  className="card m-3"
+                  style={{
+                    width: "18rem",
+                    color: "black",
+                  }}
+                >
+                  <img
+                    className="card-img-top"
+                    src={e.download_url}
+                    alt="Card image cap"
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">{e.author}</h5>
+                  </div>
                 </div>
-              </div>
+              </Link>
             );
           })
         ) : (

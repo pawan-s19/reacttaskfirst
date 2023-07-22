@@ -1,10 +1,14 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 import Gallery from "./components/Gallery";
-
+import GalleryItem from "./components/GalleryItem";
 const App = () => {
   return (
     <>
-      <Gallery />
+      <Routes>
+        <Route path="/" element={<Gallery />} />
+        <Route path="/:id" element={<GalleryItem />} />
+      </Routes>
     </>
   );
 };
